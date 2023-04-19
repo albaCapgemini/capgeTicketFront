@@ -1,1 +1,22 @@
-<p>user-details works!</p>
+<div class="container mt-3">
+    <div class="">
+        <div class="row mb-3">
+            <label class="flex-fill col" for="name">Name: </label>
+            <div class=" col">{{ user.name }}</div>
+        </div>
+        <div class="row mb-3">
+            <label class="flex-fill col" for="lastname">Lastname: </label>
+            <div class="col">{{ user.lastname }}</div>
+        </div>
+        <div class="row mb-3">
+            <label class="flex-fill col" for="mail">Email: </label>
+            <div class="col">{{ user.mail }}</div>
+        </div>
+        <div class="row mb-3">
+            <label class="flex-fill col" for="password">Password: </label>
+            <div class="col">{{ user.password }}</div>
+        </div>
+        <button class="btn btn-primary" (click)="update(user.id)"> Edit user </button>
+        <button class="btn btn-primary" routerLink="/user"> Back to list </button>
+    </div>
+</div>

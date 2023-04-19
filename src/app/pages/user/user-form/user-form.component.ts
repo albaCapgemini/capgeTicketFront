@@ -35,7 +35,6 @@ export class UserFormComponent implements OnInit {
 
     if (id$) {
       this.id = id$;
-      console.log("el id es :"+this.id)
       this.usersService
         .getById(id$)
         .subscribe((userData) => this.showData(userData));
@@ -60,7 +59,7 @@ export class UserFormComponent implements OnInit {
   save(form: User) {
     this.usersService.addUser(form).subscribe({
       next: (result) => {
-        this.router.navigate(['/list']);
+        this.router.navigate(['/user']);
       },
       error: (error) => console.error(error),
     });
@@ -70,7 +69,7 @@ export class UserFormComponent implements OnInit {
     form.id = this.id;
     this.usersService.updateUser(form).subscribe({
       next: (result) => {
-        this.router.navigate(['/list']);
+        this.router.navigate(['/user']);
       },
       error: (error) => console.error(error),
     });
