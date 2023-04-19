@@ -1,0 +1,38 @@
+<div class="container mt-3">
+    <div class="">
+        <form name="angForm" [formGroup]="angForm">
+            <div class="form-group row mb-3">
+                <label class="form-label flex-fill col" for="name">Name: </label>
+                <input class="form-control col" type="text" formControlName="name" [(ngModel)]="user.name" />
+            </div>
+            <div *ngIf="angForm.controls['name']" class="alert alert-danger">
+                The name is mandatory.
+            </div>
+            <div class="form-group row mb-3">
+                <label class="form-label flex-fill col" for="lastname">Lastname: </label>
+                <input class="form-control col" type="text" formControlName="lastname" [(ngModel)]="user.lastname" />
+            </div>
+            <div *ngIf="angForm.controls['lastname']" class="alert alert-danger">
+                The lastname is mandatory.
+            </div>
+            <div class="form-group row mb-3">
+                <label class="form-label flex-fill col" for="mail">Email: </label>
+                <input class="form-control col" type="email" formControlName="mail" [(ngModel)]="user.mail" />
+            </div>
+            <div *ngIf="angForm.controls['mail']" class="alert alert-danger">
+                The email is mandatory.
+            </div>
+            <div class="form-group row mb-3">
+                <label class="form-label flex-fill col" for="password">Password: </label>
+                <input class="form-control col" type="password" formControlName="password"
+                    [(ngModel)]="user.password" />
+            </div>
+            <div *ngIf="angForm.controls['password']" class="alert alert-danger">
+                The password is mandatory.
+            </div>
+            <button type="button" [disabled]="!angForm.valid" class="btn btn-primary" (click)="summited(user)">
+                Save user
+            </button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container mt-3">
+    <div class="">
+        <form name="eventForm" [formGroup]="eventForm">
+            <div class="form-group row mb-3">
+                <label class="form-label flex-fill col" for="name">Name: </label>
+                <input class="form-control col" type="text" formControlName="name" [(ngModel)]="event.name" />
+            </div>
+            <div class="form-group row mb-3">
+                <label class="form-label flex-fill col" for="type">Type: </label>
+                <input class="form-control col" type="text" formControlName="type" [(ngModel)]="event.type" />
+            </div>
+            <div class="form-group row mb-3">
+                <label class="form-label flex-fill col" for="description">Description: </label>
+
+                <textarea class="form-control col" formControlName="description" [(ngModel)]="event.description"
+                    name="textarea" rows="5" cols="50"></textarea>
+            </div>
+            <div class="form-group row mb-3">
+                <label class="form-label flex-fill col" for="date">Date: </label>
+                <input class="form-control col" type="date" formControlName="date" [(ngModel)]="event.date" />
+            </div>
+            <div class="form-group row mb-3">
+                <label class="form-label flex-fill col" for="time">Time: </label>
+                <input class="form-control col" type="time" formControlName="time" [(ngModel)]="event.time" />
+            </div>
+            <div class="form-group row mb-3">
+                <label class="form-label flex-fill col" for="location">Location: </label>
+                <input class="form-control col" type="text" formControlName="location" [(ngModel)]="event.location" />
+            </div>
+            <button type="button" [disabled]="!eventForm.valid" class="btn btn-primary" (click)="save(event)">
+                Save event
+            </button>
+        </form>
+    </div>
+</div>

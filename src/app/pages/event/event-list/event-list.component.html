@@ -1,0 +1,40 @@
+<div class="container mt-3">
+    <div class="row">
+      <div class="col-sm">
+        <button type="button" class="btn btn-dark" routerLink="/event/form">
+          New event
+        </button>
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Type</th>
+          <th scope="col">Description</th>
+          <th scope="col">Date</th>
+          <th scope="col">Time</th>
+          <th scope="col">Location</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let event of this.events">
+          <th scope="row">{{ event.id }}</th>
+          <td>{{ event.name }}</td>
+          <td>{{ event.type }}</td>
+          <td>{{ event.description }}</td>
+          <td>{{ event.date }}</td>
+          <td>{{ event.time }}</td>
+          <td>{{ event.location }}</td>
+          <td>
+            <button class="btn btn-primary me-2" (click)="update(event.id)" > Modify</button>
+            <button class="btn btn-danger" (click)="remove(event.id)"> Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>
